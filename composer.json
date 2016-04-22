@@ -1,0 +1,24 @@
+{
+  "name": "christianblos/codedocs-plugin-plantuml",
+  "description": "Plugin for CodeDocs to generate UML diagrams via PlantUML",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Blos",
+      "email": "christian.blos@gmx.de"
+    }
+  ],
+  "require-dev": {
+    "christianblos/codedocs": "~2.3"
+  },
+  "autoload": {
+    "psr-0": {
+      "CodeDocs\\": "classes/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  }
+}

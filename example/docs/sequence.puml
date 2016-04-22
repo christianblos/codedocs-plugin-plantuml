@@ -1,0 +1,11 @@
+@startuml
+
+actor Dev
+participant CodeDocs
+participant PlantUml
+
+Dev -> CodeDocs : execute
+CodeDocs -> PlantUml : generate URL
+PlantUml --> CodeDocs : URL
+
+@enduml

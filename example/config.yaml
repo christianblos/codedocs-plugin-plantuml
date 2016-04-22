@@ -1,0 +1,8 @@
+buildDir: .
+
+sources:
+  - baseDir: .
+    docsDir: ./docs
+
+plugins:
+  - \CodeDocs\PlantUml
