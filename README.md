@@ -13,7 +13,6 @@ plugins:
   - \CodeDocs\PlantUml
 ```
 
-
 ## Usage
 
 Create a **puml**-File next to the markdown files.
@@ -42,3 +41,15 @@ example.md:
 ```md
 {@PlantUml("diagram")}
 ```
+
+## Note
+
+You can specify a path to a **plantuml.jar** file in the config:
+
+```yaml
+plugins:
+  - \CodeDocs\PlantUml:
+      jar: ./plantuml.jar
+```
+
+If the jar is specified it will be used to generates images instead of render them on the fly.

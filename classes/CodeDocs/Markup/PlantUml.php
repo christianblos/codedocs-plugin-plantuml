@@ -4,6 +4,7 @@ namespace CodeDocs\Markup;
 use CodeDocs\Model\Config;
 use CodeDocs\Model\ParseResult;
 use CodeDocs\Model\Source;
+use CodeDocs\PlantUml as Plugin;
 use CodeDocs\PlantUml\OnlineGenerator;
 use CodeDocs\ValueObject\Parsable;
 
@@ -37,11 +38,28 @@ class PlantUml extends Markup
             return '';
         }
 
-        $content = file_get_contents($file);
-
-        $generator = new OnlineGenerator($config->getParam('plantuml.url'));
-        $url       = $generator->createUrl($content);
+        $jar = $config->getParam(Plugin::CONFIG_JAR);
+        if ($jar) {
+            $url = $this->value . '.png';
+        } else {
+            $url = $this->createOnlineLink($config, $file);
+        }
 
         return sprintf('![%s](%s)', $this->alt, $url);
+    }
+
+    /**
+     * @param Config $config
+     * @param string $file
+     *
+     * @return string
+     */
+    private function createOnlineLink(Config $config, $file)
+    {
+        $content = file_get_contents($file);
+
+        $generator = new OnlineGenerator($config->getParam(Plugin::CONFIG_URL));
+
+        return $generator->createUrl($content);
     }
 }
