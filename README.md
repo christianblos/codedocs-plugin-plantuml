@@ -42,14 +42,16 @@ example.md:
 {@PlantUml("diagram")}
 ```
 
-## Note
+## Use plantuml.jar
 
-You can specify a path to a **plantuml.jar** file in the config:
+You can specify a path to a **plantuml.jar** to generates images instead of render them on the fly.
+You also have to add the following finalizer to the config:
 
 ```yaml
+finalizers:
+  - \CodeDocs\PlantUml\CreateImagesFinalizer
+
 plugins:
   - \CodeDocs\PlantUml:
       jar: ./plantuml.jar
 ```
-
-If the jar is specified it will be used to generates images instead of render them on the fly.

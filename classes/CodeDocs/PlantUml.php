@@ -3,7 +3,6 @@ namespace CodeDocs;
 
 use CodeDocs\Component\Plugin;
 use CodeDocs\Model\Config;
-use CodeDocs\PlantUml\CreateImagesFinalizer;
 use CodeDocs\ValueObject\Directory;
 
 class PlantUml extends Plugin
@@ -22,7 +21,6 @@ class PlantUml extends Plugin
             $jarPath = realpath(sprintf('%s/%s', rtrim((string)$dir, '/'), basename($jar)));
 
             $config->setParam(self::CONFIG_JAR, $jarPath);
-            $config->addFinalizer(new CreateImagesFinalizer([]));
         }
 
         $url = $this->getParam('url');
