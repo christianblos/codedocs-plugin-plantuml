@@ -4,6 +4,8 @@ This plugin uses [PlantUML](http://plantuml.com/) to generate UML diagrams.
 
 ## Installation
 
+> **Warning:** This Plugin is not yet supported by CodeDocs 3.0. You need Version 2 of CodeDocs to make use of it. 
+
 Execute `composer require christianblos/codedocs-plugin-plantuml`.
 
 Add this plugin to your **codedocs.yaml** file:
